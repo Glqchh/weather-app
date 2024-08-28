@@ -1,2 +1,6 @@
 # weather-app
-This is a primarily mobile website for checking the weather in any city, you just have to type the city's name in the search bar, and it will tell you the temperature, and the weather state (Sunny, Cloudy, Rainy, Snowy) in that city with 2 backgrounds one for cold weather and one for hot weather, It is fully functional.
+This is a primarily mobile website for checking the weather in any city.
+
+# How to use
+-type in the city that you want to check the weather of in the search bar
+it will tell you the temperature in that city, with the state of weather (Sunny, Cloudy, Rainy, Snowy), it will also provide you with the day, month, and year of today's date
