@@ -18,7 +18,7 @@
           </div>
   
           <div class="weather-box">
-            <div class="temp">{{ Math.round(weather.main.temp) }}°C</div>
+            <div class="temp">{{ Math.round(weather.main.temp) }}°c</div>
             <div class="weather">{{ weather.weather[0].main }}</div>
           </div>
         </div>
@@ -65,6 +65,7 @@
   }
   </script>
   
+  
   <style>
 * {
   margin: 0;
@@ -73,130 +74,137 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #f0f2f5;
+  font-family: 'Poppins', sans-serif;
+  background-color: #1a1a2e;
+  color: #e0e0e0;
 }
 
+/* App Background */
 #app {
   background-image: url('./assets/cold-bg.jpg');
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  background-position: center center; 
-  background-attachment: fixed; 
-  transition: background-image 0.4s ease; 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  transition: background-image 0.3s ease-in-out;
 }
 
 #app.warm {
   background-image: url('./assets/warm-bg.jpg');
 }
 
+/* Main Content */
 main {
   min-height: 100vh;
-  padding: 40px;
+  padding: 50px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75));
+  background: rgba(34, 34, 45, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
 }
 
+/* Location Box */
 .location-box {
   text-align: center;
   margin-bottom: 15px;
 }
 
 .location-box .location {
-  color: #FFF;
-  font-size: 32px;
-  font-weight: 500;
-  text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
+  color: #e0e0e0;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
 
 .location-box .date {
-  color: #FFF;
-  font-size: 20px;
-  font-weight: 300;
-  font-style: italic;
+  color: #a0a0a0;
+  font-size: 16px;
+  font-weight: 400;
 }
 
+/* Search Box */
 .search-box {
   width: 100%;
-  max-width: 500px;
-  margin-bottom: 30px;
+  max-width: 450px;
+  margin-bottom: 25px;
   text-align: center;
 }
 
 .search-box .search-bar {
-  display: block;
   width: 100%;
-  padding: 15px;
-  color: #313131;
-  font-size: 20px;
-  appearance: none;
-  border: none;
-  outline: none;
-  background: none;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 16px;
-  transition: 0.4s;
+  padding: 14px;
+  font-size: 16px;
+  border: 2px solid #333;
+  border-radius: 12px;
+  background-color: #2d2d44;
+  color: #e0e0e0;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .search-box .search-bar:focus {
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
-  background-color: rgba(255, 255, 255, 0.75);
+  border-color: #3498db;
+  background-color: #3e3e5e;
 }
 
+/* Weather Box */
 .weather-box {
   text-align: center;
 }
 
 .weather-box .temp {
   display: inline-block;
-  padding: 10px 25px;
-  color: #FFF;
-  font-size: 102px;
-  font-weight: 900;
-  text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
-  background-color: rgba(255, 255, 255, 0.25);
-  border-radius: 16px;
-  margin: 30px 0px;
-  box-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+  padding: 12px 20px;
+  color: #e0e0e0;
+  font-size: 80px;
+  font-weight: bold;
+  margin: 20px 0;
+  background-color: rgba(52, 152, 219, 0.75); /* Default blue color */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Change temp color when warm */
+#app.warm .weather-box .temp {
+  background-color: rgba(231, 76, 60, 0.75); /* Red color for warm state */
 }
 
 .weather-box .weather {
-  color: #FFF;
-  font-size: 48px;
-  font-weight: 700;
-  font-style: italic;
-  text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+  color: #e0e0e0;
+  font-size: 36px;
+  font-weight: 500;
+  margin-top: 8px;
 }
 
 /* Media Queries for Mobile and Desktop */
 @media (min-width: 768px) {
   main {
-    padding: 80px;
+    padding: 70px 40px;
   }
 
   .search-box {
-    width: 40%;
-    max-width: 600px;
+    width: 60%;
+    max-width: 500px;
   }
 
   .location-box .location {
-    font-size: 40px;
+    font-size: 36px;
   }
 
   .location-box .date {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .weather-box .temp {
-    font-size: 120px;
+    font-size: 100px;
   }
 
   .weather-box .weather {
-    font-size: 56px;
+    font-size: 48px;
   }
 }
 
