@@ -1,0 +1,307 @@
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#weather-card {
+    background: linear-gradient(160deg, rgba(40, 40, 40, 0.95) 0%, rgba(25, 25, 25, 0.95) 100%);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+}
+
+.search-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 12px;
+    margin-bottom: 30px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: rgba(255, 152, 0, 0.5);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+#search-btn {
+    background: linear-gradient(135deg, #ff9800 0%, #ff7800 100%);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    min-width: fit-content;
+    box-sizing: border-box;
+}
+
+#search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+#search-btn:active {
+    transform: translateY(0);
+}
+
+.main-weather {
+    text-align: center;
+    padding: 20px 0 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+}
+
+#location {
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 8px;
+}
+
+#date {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+.weather-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#weather-icon {
+    font-size: 72px;
+    color: #ff9800;
+    text-shadow: 0 0 20px rgba(255, 152, 0, 0.3);
+}
+
+#temperature {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+    background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#description {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 8px 0 0;
+    text-transform: capitalize;
+}
+
+.additional-info {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.additional-info p {
+    margin: 0;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.additional-info span {
+    display: block;
+    color: #ff9800;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.forecast {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.day {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 15px 7px;
+    transition: transform 0.3s ease;
+}
+
+.day:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.day p:first-child {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    margin: 0 0 10px;
+    font-weight: 500;
+}
+
+.day i {
+    font-size: 28px;
+    color: #ff9800;
+    margin: 10px 0;
+    display: block;
+}
+
+.day p:last-child {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px 0 0;
+    background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 480px) {
+    #weather-card {
+        padding: 15px;
+        max-width: 100%; /* 90% width on mobile */
+        border-radius: 12px;
+        box-shadow: none;
+        margin: auto;
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .search-bar {
+        grid-template-columns: 1fr; /* Stack input and button */
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+        padding: 10px 14px;
+        font-size: 14px;
+        border-radius: 12px;
+        color: #fff;
+    }
+
+    #search-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%; /* Full width button */
+    }
+
+    #location {
+        font-size: 26px;
+        font-weight: 700;
+        margin: 0 0 10px;
+        text-align: center;
+        background: linear-gradient(135deg, #ff9800, #ff5722);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    #date {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .weather-info {
+        flex-direction: column; /* Stack weather info vertically */
+        gap: 15px;
+        align-items: center;
+    }
+
+    #weather-icon {
+        font-size: 60px;
+        color: #ff9800;
+        text-shadow: 0 0 15px rgba(255, 152, 0, 0.3);
+    }
+
+    #temperature {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1;
+        text-align: center;
+    }
+
+    #description {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.7);
+        margin-top: 5px;
+        text-align: center;
+    }
+
+    .additional-info {
+        flex-direction: column; /* Stack additional info */
+        gap: 15px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .forecast {
+        display: flex;
+        flex-wrap: nowrap; 
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+        overflow-x: hidden;
+    }
+
+    .day {
+        padding: 12px 8px;
+        font-size: 14px;
+    }
+
+    .day p:first-child {
+        font-size: 12px;
+    }
+
+    .day i {
+        font-size: 24px;
+    }
+
+    .day p:last-child {
+        font-size: 16px;
+        font-weight: 600;
+    }
+}

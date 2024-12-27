@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="weather-card">
+            <div class="search-bar">
+                <input type="text" id="city" placeholder="Enter City">
+                <input type="text" id="country" placeholder="Enter Country">
+                <button id="search-btn">Search</button>
+            </div>
+            <div class="main-weather">
+                <p id="location">City, Country</p>
+                <p id="date">Today</p>
+                <div class="weather-info">
+                    <img id="weather-icon" src="assets/default.svg" alt="Weather Icon">
+                    <div>
+                        <p id="temperature">--°C</p>
+                        <p id="description">Weather Description</p>
+                    </div>
+                </div>
+                <div class="additional-info">
+                    <p>Humidity: <span id="humidity">--%</span></p>
+                    <p>Wind Speed: <span id="wind-speed">-- km/h</span></p>
+                </div>
+            </div>
+            <div class="forecast">
+                <div class="day" id="day2">
+                    <p>Date</p>
+                    <img src="assets/default.svg" alt="Weather Icon">
+                    <p>--°C</p>
+                </div>
+                <div class="day" id="day3">
+                    <p>Date</p>
+                    <img src="assets/default.svg" alt="Weather Icon">
+                    <p>--°C</p>
+                </div>
+                <div class="day" id="day4">
+                    <p>Date</p>
+                    <img src="assets/default.svg" alt="Weather Icon">
+                    <p>--°C</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
